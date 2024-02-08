@@ -1,0 +1,80 @@
+*{
+    background-color: rgb(117, 59, 226);
+}
+.main{
+    background-color: white;
+    height: 500px;
+    position: relative;
+    margin: 50px;
+    border-left: 5px solid rgb(207, 162, 249);
+}
+h1{
+    position: absolute;
+    top: 2%;
+    left: 45%;
+    background-color: white;
+}
+.series{
+    position: absolute;
+    top: 9%;
+    left: 5%;
+    background-color: white;
+}
+.ques{
+    position: absolute;
+    top: 15%;
+    left: 40%;
+    background-color: white;
+}
+.option1{
+    display: flex;
+    position: absolute;
+    top: 45%;
+    left: 10%;
+    background-color: white;
+}
+.btn{
+    margin-right: 130px;
+    border: 1px solid white;
+    background-color: white;
+    height: 40px;
+    width: 420px;
+    padding-top: 10px;
+    text-align: center;
+    border-radius: 20px;
+    background-color: rgb(34, 134, 234);
+    color: white;
+}
+.option2{
+    display: flex;
+    position: absolute;
+    top: 60%;
+    left: 10%;
+    background-color: white;
+}
+.options{
+    display: flex;
+    position: absolute;
+    top: 85%;
+    left: 35%;
+    background-color: white;
+}
+.last{
+    margin-right: 40px;
+    padding: 5px 20px;
+}
+.previous{
+    background-color: rgb(95, 95, 247);
+    border: none;
+    cursor: pointer;
+}
+.next{
+    background-color: green;
+    border: none;
+    cursor: pointer;
+}
+.quit{
+    background-color: red;
+    border: none;
+    cursor: pointer;
+}
