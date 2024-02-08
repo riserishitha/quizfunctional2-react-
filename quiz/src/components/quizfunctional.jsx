@@ -3,63 +3,63 @@ const Quizpage = (props) => {
   const [index, setIndex] = useState(0);
 
   // to go to the next question after clicking on the wanted btn
-  const nextbutton = () => {
-    let questionNumber = index;
-    if (questionNumber === props.Data.length - 1) {
+  const toNext = () => {
+    let questions = index;
+    if (questions === props.Data.length - 1) {
       setIndex(0);
     } else {
-      setIndex(questionNumber + 1);
+      setIndex(questions + 1);
     }
   };
 
   // to go to the previous question after clicking on the wanted btn
-  const prevbutton = () => {
-    let questionNumber = index;
+  const toBack = () => {
+    let questions = index;
 
-    if (questionNumber === 0) {
+    if (questions === 0) {
       setIndex(props.Data.length - 1);
     } else {
-      setIndex(questionNumber - 1);
+      setIndex(questions - 1);
     }
   };
 
   // if you want to quit the quiz ...
   const quitbutton = () => {
-    let questionNumber = index;
-    let confirmQuit = window.confirm("Are you sure you want to quit?");
+    let questions = index;
+    let toQuit = window.confirm("Are you sure you want to quit?");
 
-    if (confirmQuit) {
-      if (questionNumber === props.Data.length - 1) {
+    if (toQuit) {
+      if (questions === props.Data.length - 1) {
         setIndex(0);
       } else {
-        setIndex(questionNumber + 1);
+        setIndex(questions + 1);
       }
       +6;
     }
   };
 
-  let questionNumber = index;
+  let questions = index;
 
   return (
     <div className="main">
       <h1>Question</h1>
-      <p className="series">{`${questionNumber + 1} of ${
+      <p className="series">{`${questions + 1} of ${
         props.Data.length
       }`}</p>
-      <h3 className="ques">{props.Data[questionNumber].question}</h3>
+      <h3 className="ques">{props.Data[questions].question}</h3>
       <div className="option1">
-        <p className="btn">{props.Data[questionNumber].optionA}</p>
-        <p className="btn">{props.Data[questionNumber].optionB}</p>
+        <p className="btn">{props.Data[questions].optionA}</p>
+        <p className="btn">{props.Data[questions].optionB}</p>
       </div>
       <div className="option2">
-        <p className="btn">{props.Data[questionNumber].optionC}</p>
-        <p className="btn">{props.Data[questionNumber].optionD}</p>
+        <p className="btn">{props.Data[questions].optionC}</p>
+        <p className="btn">{props.Data[questions].optionD}</p>
       </div>
       <div className="options">
-        <button className="last previous" onClick={prevbutton}>
+        <button className="last previous" onClick={toBack}>
           Previous
         </button>
-        <button className="last next" onClick={nextbutton}>
+        <button className="last next" onClick={toNext}>
           Next
         </button>
         <button className="last quit" onClick={quitbutton}>
